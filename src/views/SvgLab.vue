@@ -11,7 +11,7 @@ export default {
 <template>
   <section>
     <LabSVG />
-    <p>Credit to [ihatetomatoes](https://ihatetomatoes.net/)</p>
+    <p>Credit to <a href="https://ihatetomatoes.net/">ihatetomatoes</a></p>
   </section>
 </template>
 
