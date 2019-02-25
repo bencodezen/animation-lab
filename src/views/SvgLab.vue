@@ -1,11 +1,11 @@
 <script>
-import LabSVG from '../components/LabSVG'
+import LabSVG from "../components/LabSVG";
 
 export default {
   components: {
     LabSVG
   }
-}
+};
 </script>
 
 <template>
@@ -15,6 +15,4 @@ export default {
   </section>
 </template>
 
-<style>
-
-</style>
+<style></style>
