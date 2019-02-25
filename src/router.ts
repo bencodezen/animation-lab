@@ -21,6 +21,12 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
+    },
+    {
+      path: "/svg-lab",
+      name: "svg-lab",
+      component: () =>
+        import(/* webpackChunkName: "svg-lab" */ "./views/SvgLab.vue")
     }
   ]
 });
