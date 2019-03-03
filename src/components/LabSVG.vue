@@ -1,5 +1,14 @@
 <script>
 export default {
+  data() {
+    return {
+      colors: {
+        green: '#73C996',
+        red: '#F8876E',
+        yellow: '#F8AD43'
+      }
+    }
+  },
   methods: {
     clearStage() {
       const clearTl = new TimelineMax()
@@ -23,6 +32,9 @@ export default {
         .set(this.$refs.liquidInside5Mask, { y: 654 })
         .set(this.$refs.liquidInside6Mask, { y: 651 })
         .set(this.$refs.liquidInside7Mask, { y: 651 })
+        .set(this.$refs.bulb1, { fill: '#fff' })
+        .set(this.$refs.bulb2, { fill: '#fff' })
+        .set(this.$refs.bulb3, { fill: '#fff' })
 
       return clearTl
     }
@@ -1660,6 +1672,7 @@ export default {
     />
     <g id="Bulb3">
       <path
+        ref="bulb3"
         fill="#F8AD43"
         stroke="#294C67"
         stroke-width="4"
@@ -1705,6 +1718,7 @@ export default {
     </g>
     <g id="Bulb2">
       <path
+        ref="bulb2"
         fill="#F8876E"
         stroke="#294C67"
         stroke-width="4"
@@ -1750,6 +1764,7 @@ export default {
     </g>
     <g id="Bulb1">
       <path
+        ref="bulb1"
         fill="#73C996"
         stroke="#294C67"
         stroke-width="4"
