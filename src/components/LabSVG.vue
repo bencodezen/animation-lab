@@ -3,12 +3,26 @@ export default {
   methods: {
     clearStage() {
       const clearTl = new TimelineMax()
+      const liquids = document.querySelectorAll('.liquid')
       
       clearTl
         .set(this.$refs.coin, {
+          x: -90,
+          y: 120,
           scale: 0.5,
           transformOrigin: 'center center'
         })
+        .set(this.$refs.mainBulb, {
+          fill: '#fff'
+        })
+        .set(liquids, { stroke: '#fff' })
+        .set(this.$refs.liquidInside1Mask, { y: 492 })
+        .set(this.$refs.liquidInside2Mask, { y: 494 })
+        .set(this.$refs.liquidInside3Mask, { y: 491 })
+        .set(this.$refs.liquidInside4Mask, { y: 650 })
+        .set(this.$refs.liquidInside5Mask, { y: 654 })
+        .set(this.$refs.liquidInside6Mask, { y: 651 })
+        .set(this.$refs.liquidInside7Mask, { y: 651 })
 
       return clearTl
     }
@@ -23,8 +37,6 @@ export default {
 
 <template>
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     version="1.1"
     id="GSAPLab"
     x="0"
@@ -34,6 +46,78 @@ export default {
     enable-background="new 0 0 1024 768"
     xml:space="preserve"
   >
+    <defs>
+      <clipPath id="liquid-inside-1-mask">
+        <rect
+          ref="liquidInside1Mask"
+          x="387"
+          y="415"
+          fill="#F8876E"
+          width="49"
+          height="77"
+        />
+      </clipPath>
+      <clipPath id="liquid-inside-2-mask">
+        <rect
+          ref="liquidInside2Mask"
+          x="446"
+          y="451"
+          fill="#F8876E"
+          width="20"
+          height="43"
+        />
+      </clipPath>
+      <clipPath id="liquid-inside-3-mask">
+        <rect
+          ref="liquidInside3Mask"
+          x="493"
+          y="452"
+          fill="#F8876E"
+          width="17"
+          height="39"
+        />
+      </clipPath>
+      <clipPath id="liquid-inside-4-mask">
+        <rect
+          ref="liquidInside4Mask"
+          x="614"
+          y="602"
+          fill="#F8876E"
+          width="69"
+          height="48"
+        />
+      </clipPath>
+      <clipPath id="liquid-inside-5-mask">
+        <rect
+          ref="liquidInside5Mask"
+          x="707"
+          y="563"
+          fill="#F8876E"
+          width="69"
+          height="91"
+        />
+      </clipPath>
+      <clipPath id="liquid-inside-6-mask">
+        <rect
+          ref="liquidInside6Mask"
+          x="835"
+          y="608"
+          fill="#F8876E"
+          width="15"
+          height="43"
+        />
+      </clipPath>
+      <clipPath id="liquid-inside-7-mask">
+        <rect
+          ref="liquidInside7Mask"
+          x="875"
+          y="608"
+          fill="#F8876E"
+          width="12"
+          height="43"
+        />
+      </clipPath>
+    </defs>
     <g id="_x3C_Group_x3E_">
       <path
         fill="#FFFFFF"
@@ -50,26 +134,9 @@ export default {
         id="LiquidInside1"
         fill="#F8876E"
         d="M416 449v-31h-10v31c-9.1 1.9-16 10.3-16 20 0 11 10 21 21 21s21-10 21-21C432 459.3 425.1 450.9 416 449z"
-      />
-      <rect
-        id="LiquidInside1Mask_1_"
-        x="389"
-        y="416"
-        display="none"
-        fill="#F8876E"
-        width="45"
-        height="75"
+        clip-path="url(#liquid-inside-1-mask)"
       />
     </g>
-    <rect
-      id="LiquidInside1Mask"
-      x="387"
-      y="415"
-      display="none"
-      fill="#F8876E"
-      width="49"
-      height="77"
-    />
     <path
       fill="#FFFFFF"
       stroke="#294C67"
@@ -83,15 +150,7 @@ export default {
       id="LiquidInside5"
       fill="#F8876E"
       d="M753 653h-22c-11 0-20-9-20-20v-67h62v67C773 644 764 653 753 653z"
-    />
-    <rect
-      id="LiquidInside5Mask"
-      x="707"
-      y="563"
-      display="none"
-      fill="#F8876E"
-      width="69"
-      height="91"
+      clip-path="url(#liquid-inside-5-mask)"
     />
     <path
       fill="#FFFFFF"
@@ -110,15 +169,7 @@ export default {
       id="LiquidInside2"
       fill="#F8876E"
       d="M451 457h10v28c0 2.8-2.2 5-5 5l0 0c-2.8 0-5-2.2-5-5V457z"
-    />
-    <rect
-      id="LiquidInside2Mask"
-      x="446"
-      y="451"
-      display="none"
-      fill="#F8876E"
-      width="20"
-      height="43"
+      clip-path="url(#liquid-inside-2-mask)"
     />
     <path
       fill="none"
@@ -140,6 +191,7 @@ export default {
     />
     <path
       id="Liquid9"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -245,6 +297,7 @@ export default {
     />
     <path
       id="Liquid7"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -255,6 +308,7 @@ export default {
     />
     <path
       id="Liquid5"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -265,6 +319,7 @@ export default {
     />
     <path
       id="Liquid6"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -275,6 +330,7 @@ export default {
     />
     <path
       id="Liquid4"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -284,6 +340,7 @@ export default {
     />
     <path
       id="Liquid3"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -309,6 +366,7 @@ export default {
     />
     <path
       id="Liquid2"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -334,6 +392,7 @@ export default {
     />
     <path
       id="Liquid1"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -352,6 +411,7 @@ export default {
     />
     <path
       id="Liquid8"
+      class="liquid"
       fill="none"
       stroke="#F8876E"
       stroke-width="6"
@@ -1045,15 +1105,7 @@ export default {
         id="LiquidInside6"
         fill="#F8876E"
         d="M837 610h10v35c0 2.8-2.2 5-5 5l0 0c-2.8 0-5-2.2-5-5V610z"
-      />
-      <rect
-        id="LiquidInside6Mask"
-        x="835"
-        y="608"
-        display="none"
-        fill="#F8876E"
-        width="15"
-        height="43"
+        clip-path="url(#liquid-inside-6-mask)"
       />
     </g>
     <g id="_x3C_Group_x3E__2_">
@@ -1095,15 +1147,7 @@ export default {
         id="LiquidInside7"
         fill="#F8876E"
         d="M876 610h10v35c0 2.8-2.2 5-5 5l0 0c-2.8 0-5-2.2-5-5V610z"
-      />
-      <rect
-        id="LiquidInside7Mask"
-        x="875"
-        y="608"
-        display="none"
-        fill="#F8876E"
-        width="12"
-        height="43"
+        clip-path="url(#liquid-inside-7-mask)"
       />
     </g>
     <g id="Printer">
@@ -1369,15 +1413,7 @@ export default {
       id="LiquidInside4"
       fill="#F8876E"
       d="M677.4 631L658 605h-21l-18.6 26c-5.9 7.8-0.4 18 9.3 18H669C678.8 649 683.2 638.8 677.4 631z"
-    />
-    <rect
-      id="LiquidInside4Mask"
-      x="614"
-      y="602"
-      display="none"
-      fill="#F8876E"
-      width="69"
-      height="48"
+      clip-path="url(#liquid-inside-4-mask)"
     />
     <path
       fill="#FFFFFF"
@@ -1501,6 +1537,7 @@ export default {
     />
     <path
       id="MainBulb"
+      ref="mainBulb"
       fill="#F8AD43"
       stroke="#294C67"
       stroke-width="4"
@@ -2032,15 +2069,7 @@ export default {
       id="LiquidInside3"
       fill="#F8876E"
       d="M496 457h10v28c0 2.8-2.2 5-5 5l0 0c-2.8 0-5-2.2-5-5V457z"
-    />
-    <rect
-      id="LiquidInside3Mask"
-      x="493"
-      y="452"
-      display="none"
-      fill="#F8876E"
-      width="17"
-      height="39"
+      clip-path="url(#liquid-inside-3-mask)"
     />
     <line
       fill="none"
@@ -2376,4 +2405,8 @@ export default {
   </svg>
 </template>
 
-<style></style>
+<style>
+#BulbIdea {
+  visibility: hidden;
+}
+</style>
