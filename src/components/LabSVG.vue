@@ -40,6 +40,12 @@ export default {
         .set(this.$refs.light1, { fill: this.colors.lightGrey })
         .set(this.$refs.light2, { fill: this.colors.lightGrey })
         .set(this.$refs.light3, { fill: this.colors.lightGrey })
+        .set(this.$refs.printerLightTopLeft, { fill: this.colors.lightGrey })
+        .set(this.$refs.printerLightTopRight, { fill: this.colors.lightGrey })
+        .set(this.$refs.printerLightBottomLeft, { fill: this.colors.lightGrey })
+        .set(this.$refs.printerLightBottomRight, { fill: this.colors.lightGrey })
+        .set(this.$refs.beakerLight, { fill: this.colors.lightGrey })
+        .set(this.$refs.paper, { y: '+=55' })
 
       return clearTl
     }
@@ -1171,6 +1177,147 @@ export default {
         clip-path="url(#liquid-inside-7-mask)"
       />
     </g>
+        <g ref="paper">
+      <defs>
+        <rect id="XMLID_4_" x="400" y="557" width="166" height="54" />
+      </defs>
+      <use xlink:href="#XMLID_4_" overflow="visible" fill="#FEEFD9" />
+      <clipPath id="XMLID_2_">
+        <use xlink:href="#XMLID_4_" overflow="visible" />
+      </clipPath>
+      <rect
+        x="546"
+        y="559"
+        clip-path="url(#XMLID_2_)"
+        fill="none"
+        stroke="#FCDEB4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        width="18"
+        height="52"
+      />
+      <g clip-path="url(#XMLID_2_)">
+        <circle fill="#294C67" cx="555" cy="600" r="4" />
+        <circle fill="#294C67" cx="555" cy="589" r="4" />
+        <circle fill="#294C67" cx="555" cy="578" r="4" />
+        <circle fill="#294C67" cx="555" cy="567" r="4" />
+      </g>
+      <rect
+        x="402"
+        y="558"
+        clip-path="url(#XMLID_2_)"
+        fill="none"
+        stroke="#FCDEB4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        width="18"
+        height="52"
+      />
+      <circle
+        clip-path="url(#XMLID_2_)"
+        fill="#294C67"
+        cx="411"
+        cy="600"
+        r="4"
+      />
+      <circle
+        clip-path="url(#XMLID_2_)"
+        fill="#294C67"
+        cx="411"
+        cy="589"
+        r="4"
+      />
+      <circle
+        clip-path="url(#XMLID_2_)"
+        fill="#294C67"
+        cx="411"
+        cy="578"
+        r="4"
+      />
+      <circle
+        clip-path="url(#XMLID_2_)"
+        fill="#294C67"
+        cx="411"
+        cy="567"
+        r="4"
+      />
+      <line
+        clip-path="url(#XMLID_2_)"
+        fill="none"
+        stroke="#FCDEB4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        x1="546"
+        y1="572"
+        x2="421"
+        y2="572"
+      />
+      <line
+        clip-path="url(#XMLID_2_)"
+        fill="none"
+        stroke="#FCDEB4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        x1="546"
+        y1="586"
+        x2="421"
+        y2="586"
+      />
+      <line
+        clip-path="url(#XMLID_2_)"
+        fill="none"
+        stroke="#FCDEB4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        x1="546"
+        y1="599"
+        x2="421"
+        y2="599"
+      />
+      <line
+        clip-path="url(#XMLID_2_)"
+        fill="none"
+        stroke="#FCDEB4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        x1="546"
+        y1="559"
+        x2="421"
+        y2="559"
+      />
+      <g id="PaperText" clip-path="url(#XMLID_2_)">
+        <text
+          transform="matrix(1 0 0 1 423 590)"
+          fill="#294C67"
+          font-family="'PTMono-Bold'"
+          font-size="18"
+        >
+          START HERE!
+        </text>
+      </g>
+      <use
+        xlink:href="#XMLID_4_"
+        overflow="visible"
+        fill="none"
+        stroke="#294C67"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+      />
+    </g>
     <g id="Printer">
       <rect
         x="386"
@@ -1216,7 +1363,7 @@ export default {
           height="54"
         />
         <circle
-          id="PrinterLIghtTop"
+          ref="printerLightTopLeft"
           fill="#F8876E"
           stroke="#294C67"
           stroke-width="4"
@@ -1228,7 +1375,7 @@ export default {
           r="7"
         />
         <circle
-          id="PrinterLIghtBottom"
+          ref="printerLightBottomLeft"
           fill="#F8AD43"
           stroke="#294C67"
           stroke-width="4"
@@ -1254,7 +1401,7 @@ export default {
           height="54"
         />
         <circle
-          id="PrinterLIghtTop_2_"
+          ref="printerLightTopRight"
           fill="#F8876E"
           stroke="#294C67"
           stroke-width="4"
@@ -1266,7 +1413,7 @@ export default {
           r="7"
         />
         <circle
-          id="PrinterLIghtBottom_1_"
+          ref="printerLightBottomRight"
           fill="#F8AD43"
           stroke="#294C67"
           stroke-width="4"
@@ -1842,7 +1989,7 @@ export default {
       height="22"
     />
     <circle
-      id="MainLight"
+      ref="beakerLight"
       fill="#F8876E"
       stroke="#294C67"
       stroke-width="4"
@@ -1894,147 +2041,6 @@ export default {
       stroke-miterlimit="10"
       d="M779 543h-76c-3.9 0-7 3.1-7 7l0 0c0 3.9 3.1 7 7 7h76c3.9 0 7-3.1 7-7l0 0C786 546.1 782.9 543 779 543z"
     />
-    <g id="Paper">
-      <defs>
-        <rect id="XMLID_4_" x="400" y="557" width="166" height="54" />
-      </defs>
-      <use xlink:href="#XMLID_4_" overflow="visible" fill="#FEEFD9" />
-      <clipPath id="XMLID_2_">
-        <use xlink:href="#XMLID_4_" overflow="visible" />
-      </clipPath>
-      <rect
-        x="546"
-        y="559"
-        clip-path="url(#XMLID_2_)"
-        fill="none"
-        stroke="#FCDEB4"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        width="18"
-        height="52"
-      />
-      <g clip-path="url(#XMLID_2_)">
-        <circle fill="#294C67" cx="555" cy="600" r="4" />
-        <circle fill="#294C67" cx="555" cy="589" r="4" />
-        <circle fill="#294C67" cx="555" cy="578" r="4" />
-        <circle fill="#294C67" cx="555" cy="567" r="4" />
-      </g>
-      <rect
-        x="402"
-        y="558"
-        clip-path="url(#XMLID_2_)"
-        fill="none"
-        stroke="#FCDEB4"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        width="18"
-        height="52"
-      />
-      <circle
-        clip-path="url(#XMLID_2_)"
-        fill="#294C67"
-        cx="411"
-        cy="600"
-        r="4"
-      />
-      <circle
-        clip-path="url(#XMLID_2_)"
-        fill="#294C67"
-        cx="411"
-        cy="589"
-        r="4"
-      />
-      <circle
-        clip-path="url(#XMLID_2_)"
-        fill="#294C67"
-        cx="411"
-        cy="578"
-        r="4"
-      />
-      <circle
-        clip-path="url(#XMLID_2_)"
-        fill="#294C67"
-        cx="411"
-        cy="567"
-        r="4"
-      />
-      <line
-        clip-path="url(#XMLID_2_)"
-        fill="none"
-        stroke="#FCDEB4"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        x1="546"
-        y1="572"
-        x2="421"
-        y2="572"
-      />
-      <line
-        clip-path="url(#XMLID_2_)"
-        fill="none"
-        stroke="#FCDEB4"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        x1="546"
-        y1="586"
-        x2="421"
-        y2="586"
-      />
-      <line
-        clip-path="url(#XMLID_2_)"
-        fill="none"
-        stroke="#FCDEB4"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        x1="546"
-        y1="599"
-        x2="421"
-        y2="599"
-      />
-      <line
-        clip-path="url(#XMLID_2_)"
-        fill="none"
-        stroke="#FCDEB4"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-        x1="546"
-        y1="559"
-        x2="421"
-        y2="559"
-      />
-      <g id="PaperText" clip-path="url(#XMLID_2_)">
-        <text
-          transform="matrix(1 0 0 1 423 590)"
-          fill="#294C67"
-          font-family="'PTMono-Bold'"
-          font-size="18"
-        >
-          START HERE!
-        </text>
-      </g>
-      <use
-        xlink:href="#XMLID_4_"
-        overflow="visible"
-        fill="none"
-        stroke="#294C67"
-        stroke-width="6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
-      />
-    </g>
     <line
       fill="none"
       stroke="#294C67"
