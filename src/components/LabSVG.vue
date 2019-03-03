@@ -4,6 +4,7 @@ export default {
     return {
       colors: {
         green: '#73C996',
+        lightGrey: '#C6D7E0',
         red: '#F8876E',
         yellow: '#F8AD43'
       }
@@ -35,6 +36,10 @@ export default {
         .set(this.$refs.bulb1, { fill: '#fff' })
         .set(this.$refs.bulb2, { fill: '#fff' })
         .set(this.$refs.bulb3, { fill: '#fff' })
+        .set(this.$refs.meterBg, { fill: this.colors.lightGrey })
+        .set(this.$refs.light1, { fill: this.colors.lightGrey })
+        .set(this.$refs.light2, { fill: this.colors.lightGrey })
+        .set(this.$refs.light3, { fill: this.colors.lightGrey })
 
       return clearTl
     }
@@ -609,6 +614,7 @@ export default {
           d="M334 623h-40c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h40c2.2 0 4-1.8 4-4v-24C338 624.8 336.2 623 334 623z"
         />
         <circle
+          ref="light1"
           fill="#F8AD43"
           stroke="#294C67"
           stroke-width="2"
@@ -618,6 +624,7 @@ export default {
           r="5"
         />
         <circle
+          ref="light2"
           fill="#F8876E"
           stroke="#294C67"
           stroke-width="2"
@@ -627,6 +634,7 @@ export default {
           r="5"
         />
         <circle
+          ref="light3"
           fill="#5AB783"
           stroke="#294C67"
           stroke-width="2"
@@ -677,6 +685,7 @@ export default {
         />
       </g>
       <path
+        ref="meterBg"
         fill="#5AB783"
         stroke="#294C67"
         stroke-width="4"
