@@ -1,5 +1,24 @@
 <script>
-export default {};
+export default {
+  methods: {
+    clearStage() {
+      const clearTl = new TimelineMax()
+      
+      clearTl
+        .set(this.$refs.coin, {
+          scale: 0.5,
+          transformOrigin: 'center center'
+        })
+
+      return clearTl
+    }
+  },
+  mounted() {
+    const mainTl = new TimelineMax()
+
+    mainTl.add(this.clearStage())
+  }
+};
 </script>
 
 <template>
@@ -10,6 +29,7 @@ export default {};
     id="GSAPLab"
     x="0"
     y="0"
+    width="900"
     viewBox="0 0 1024 768"
     enable-background="new 0 0 1024 768"
     xml:space="preserve"
@@ -625,7 +645,7 @@ export default {};
         width="8"
         height="18"
       />
-      <g id="Coin">
+      <g id="Coin" ref="coin">
         <circle
           fill="#F8AD43"
           stroke="#294C67"
